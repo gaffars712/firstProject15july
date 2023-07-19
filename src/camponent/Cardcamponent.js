@@ -1,11 +1,11 @@
 import React from "react";
 import Cardbody from "./Cardbody";
 import Spinner from "./Spinner";
-import { PropTypes } from "prop-types";
 export default class Cardcamponent extends React.Component {
-  static defultProps ={
-    catogry: "general"
-  }
+  
+  // static defultProps ={
+  //   catogry: "general"
+  // }
   // static PropTypes ={   
   //   catogry:PropTypes.string,
   // }
@@ -280,25 +280,47 @@ export default class Cardcamponent extends React.Component {
       loading : false,
       page:1
     }}
-   async componentDidMount(){
-      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=cc69e9f0a5e6482b829879f3f749ecd7&page=1&pageSize=6`;
+     fachdatamount =async()=>{
+      this.props.progressbar(50)
+
+      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=137d3c43a4244e2b8e78a05297299511&page=${this.state.page}&pageSize=6`;
     this.setState({loading:true})
     const data = await fetch(url);
     const passdata = await data.json();
     this.setState({loading:false})
     console.log("pasdata",passdata)
+    this.props.progressbar(100)
     this.setState({articalse: passdata.articles,
       page: this.state.page,
      loading:false
      });
+    }
+   async componentDidMount(){
+    this.fachdatamount()
+    // this.props.progressbar(50)
+
+    //   const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=137d3c43a4244e2b8e78a05297299511&page=1&pageSize=6`;
+    // this.setState({loading:true})
+    // const data = await fetch(url);
+    // const passdata = await data.json();
+    // this.setState({loading:false})
+    // console.log("pasdata",passdata)
+    // this.props.progressbar(100)
+    // this.setState({articalse: passdata.articles,
+    //   page: this.state.page,
+    //  loading:false
+    //  });
     };
       prviousbutoon = async ()=>{
+      this.props.progressbar(20)
         console.log("privies")
-      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=cc69e9f0a5e6482b829879f3f749ecd7&page=${this.state.page - 1}&pageSize=6`;
+      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=137d3c43a4244e2b8e78a05297299511&page=${this.state.page - 1}&pageSize=6`;
     this.setState({loading:true})
     const data = await fetch(url);
+    this.props.progressbar(50)
     const passdata = await data.json();
     this.setState({loading:false})
+    this.props.progressbar(100)
     this.setState({articalse: passdata.articles ,
     page:this.state.page -1,
     loading:false});
@@ -306,19 +328,25 @@ export default class Cardcamponent extends React.Component {
 
     };
     nextbutton = async ()=>{
-
-      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=cc69e9f0a5e6482b829879f3f749ecd7&page=${this.state.page + 1}&pagesize=6`;
+      this.props.progressbar(30)
+      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=137d3c43a4244e2b8e78a05297299511&page=${this.state.page + 1}&pagesize=6`;
     this.setState({loading:true})
+    this.props.progressbar(50)
       const data = await fetch(url);
       const passdata = await data.json();
     this.setState({loading:false})
+    this.props.progressbar(100)
       this.setState({ page: this.state.page + 1,
         articalse: passdata.articles , loading:false
      });
     };
   
   render() {
-    return (
+{  document.title=` News Monkey - ${this.props.catogry.charAt(0).toUpperCase() + this.props.catogry.slice(1)}`}
+
+  return (<>
+  <h1 id="h1color" className="mt-2 mb-0 text-center">{`News Monkey ${this.props.catogry.charAt(0).toUpperCase() + this.props.catogry.slice(1)}`}</h1>
+
     <div className="container-fluid">
        { this.state.loading && <Spinner/>}
       <div className="row">
@@ -337,7 +365,7 @@ export default class Cardcamponent extends React.Component {
 
                 </div>
                 </div>
-      
+                </>
       )
   }
 }

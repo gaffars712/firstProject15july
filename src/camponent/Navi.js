@@ -2,25 +2,25 @@ import React from "react"
 import { Link } from "react-router-dom";
 
 
-export default class Navi extends React.Component {
+ const Navi=(props)=>  {
   
   
-  darkmode = ()=>{
+  const darkmode = ()=>{
     console.log("cheng mod");
-      document.getElementById("h1color").style =' color:white'
-    document.body.style = 'background:black'
+    document.body.style = 'background:black';
+    document.getElementById("h1color").style = 'color:white'
    
   }
-  darkmode11 =()=>{
-    document.getElementById("h1color").style =' color:black'
+  const darkmode11 =()=>{
+    document.body.style = 'background:white';
+    document.getElementById("h1color").style = 'color:black'
+
     
 
-  document.body.style='background:white'
-
   }
-  render() {
    
-    return (<>    
+    return (    <>
+
       <nav className=" navbar navbar-expand-lg navbar-primary bg-dark w-100">
       <Link className="navbar-brand" to="/">Navbar</Link>
      
@@ -36,16 +36,14 @@ export default class Navi extends React.Component {
         </ul>
       </div>
       <div >
-      <button data-bs-toggle="tooltip" title="Dark Mode" data-bs-placement ="top" type="button" style={{width:"2rem",height:"2rem",background:"black", margin:"0 1rem "}} onClick={this.darkmode}></button>
-      <button data-bs-toggle = "tooltip" title="White Mode" databs-placement = "buttom" type="button" style={{width:"2rem",height:"2rem",background:"whtie", margin:"0 1rem "}} onClick={this.darkmode11}></button>
+      <button data-bs-toggle="tooltip" title="Dark Mode" data-bs-placement ="top" type="button" style={{width:"2rem",height:"2rem",background:"black", margin:"0 1rem "}} onClick={darkmode}></button>
+      <button data-bs-toggle = "tooltip" title="White Mode" databs-placement = "buttom" type="button" style={{width:"2rem",height:"2rem",background:"whtie", margin:"0 1rem "}} onClick={darkmode11}></button>
       </div>
 
     </nav>
 
-<h1 className=" text-center my-3 " id="h1color" >News Monkey</h1>
 
-</>
- )
-  }
+      </> )
+  
 }
-
+export default Navi;
