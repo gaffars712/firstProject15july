@@ -283,7 +283,7 @@ export default class Cardcamponent extends React.Component {
      fachdatamount =async()=>{
       this.props.progressbar(50)
 
-      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=137d3c43a4244e2b8e78a05297299511&page=${this.state.page}&pageSize=6`;
+      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=6`;
     this.setState({loading:true})
     const data = await fetch(url);
     const passdata = await data.json();
@@ -314,7 +314,7 @@ export default class Cardcamponent extends React.Component {
       prviousbutoon = async ()=>{
       this.props.progressbar(20)
         console.log("privies")
-      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=137d3c43a4244e2b8e78a05297299511&page=${this.state.page - 1}&pageSize=6`;
+      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page - 1}&pageSize=6`;
     this.setState({loading:true})
     const data = await fetch(url);
     this.props.progressbar(50)
@@ -329,7 +329,7 @@ export default class Cardcamponent extends React.Component {
     };
     nextbutton = async ()=>{
       this.props.progressbar(30)
-      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=137d3c43a4244e2b8e78a05297299511&page=${this.state.page + 1}&pagesize=6`;
+      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page + 1}&pagesize=6`;
     this.setState({loading:true})
     this.props.progressbar(50)
       const data = await fetch(url);
@@ -345,7 +345,7 @@ export default class Cardcamponent extends React.Component {
 {  document.title=` News Monkey - ${this.props.catogry.charAt(0).toUpperCase() + this.props.catogry.slice(1)}`}
 
   return (<>
-  <h1 id="h1color" className="mt-2 mb-0 text-center">{`News Monkey ${this.props.catogry.charAt(0).toUpperCase() + this.props.catogry.slice(1)}`}</h1>
+  <h1 id="h1color" className="mt-5 mb-0 text-center">{`News Monkey ${this.props.catogry.charAt(0).toUpperCase() + this.props.catogry.slice(1)}`}</h1>
 
     <div className="container-fluid">
        { this.state.loading && <Spinner/>}

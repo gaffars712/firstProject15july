@@ -4,16 +4,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import LoadingBar from 'react-top-loading-bar'
 import Cardcamponent from './camponent/Cardcamponent'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
  
 
-export default class App extends Component {
- state = {progress :0,}
+const App = ()=> {
+ 
+ const [progress, setprogress] = useState(0)
+ const apikey="cd424eb4910340fc81bc4578e4a86d86" 
 
-    progressbar=(progress) =>{
-      this.setState({progress:progress})
-    }
-  render() {
+    
+  
     return (
       
          <div>
@@ -24,20 +24,20 @@ export default class App extends Component {
 
   <LoadingBar
      color='#f11946'
-     progress={this.state.progress}
+     progress={progress}
      height={3}
     
    />
  
    <Routes>
-   <Route path="/" element={  <Cardcamponent progressbar = {this.progressbar}    key={"general"}  catogry = "general"/>}></Route>
-     <Route path="/home" element={  <Cardcamponent progressbar = {this.progressbar}     key={"general"}  catogry = "general"/>}></Route>
-     <Route path="/business" element={  <Cardcamponent progressbar = {this.progressbar}     key={"business"} catogry = "business"/>}></Route>
-     <Route path="/Entertainment" element={  <Cardcamponent progressbar = {this.progressbar}     key={"Entertainment"} catogry = "Entertainment"/>}></Route>
-     <Route path="/Health" element={  <Cardcamponent progressbar = {this.progressbar}     key={"Health"} catogry = "Health"/>}></Route>
-     <Route path="/Science" element={  <Cardcamponent progressbar = {this.progressbar}     key={"Science"}catogry = "Science"/>}></Route>
-     <Route path="/Sports" element={  <Cardcamponent progressbar = {this.progressbar}     key={"sports"} catogry = "sports"/>}></Route>
-     <Route path="/Technology" element={  <Cardcamponent progressbar = {this.progressbar}     key={"Technology"} catogry = "Technology"/>}></Route>
+   <Route path="/" element={  <Cardcamponent  apikey = {apikey}  progressbar = {setprogress}    key={"general"}  catogry = "general"/>}></Route>
+     <Route path="/home" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"general"}  catogry = "general"/>}></Route>
+     <Route path="/business" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"business"} catogry = "business"/>}></Route>
+     <Route path="/Entertainment" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Entertainment"} catogry = "Entertainment"/>}></Route>
+     <Route path="/Health" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Health"} catogry = "Health"/>}></Route>
+     <Route path="/Science" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Science"}catogry = "Science"/>}></Route>
+     <Route path="/Sports" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"sports"} catogry = "sports"/>}></Route>
+     <Route path="/Technology" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Technology"} catogry = "Technology"/>}></Route>
 
    </Routes>
  </BrowserRouter>
@@ -48,6 +48,7 @@ export default class App extends Component {
         
       
     )
-  }
+  
 }
 
+export default App;

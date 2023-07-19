@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
    
     return (    <>
 
-      <nav className=" navbar navbar-expand-lg navbar-primary bg-dark w-100">
+      <nav className=" navbar navbar-expand-lg navbar-primary fixed-top bg-dark w-100">
       <Link className="navbar-brand" to="/">Navbar</Link>
      
       <div className="" id="navbarNav">
