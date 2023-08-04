@@ -283,12 +283,12 @@ export default class Cardcamponent extends React.Component {
      fachdatamount =async()=>{
       this.props.progressbar(50)
 
-      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=6`;
+      const  url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.catogry}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=6`;
     this.setState({loading:true})
     const data = await fetch(url);
     const passdata = await data.json();
     this.setState({loading:false})
-    console.log("pasdata",passdata)
+    console.log("pasdata gaffar",passdata)
     this.props.progressbar(100)
     this.setState({articalse: passdata.articles,
       page: this.state.page,
@@ -314,7 +314,7 @@ export default class Cardcamponent extends React.Component {
       prviousbutoon = async ()=>{
       this.props.progressbar(20)
         console.log("privies")
-      const  url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page - 1}&pageSize=6`;
+      const  url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page - 1}&pageSize=6`;
     this.setState({loading:true})
     const data = await fetch(url);
     this.props.progressbar(50)
@@ -329,7 +329,7 @@ export default class Cardcamponent extends React.Component {
     };
     nextbutton = async ()=>{
       this.props.progressbar(30)
-      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page + 1}&pagesize=6`;
+      const url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page + 1}&pagesize=6`;
     this.setState({loading:true})
     this.props.progressbar(50)
       const data = await fetch(url);
