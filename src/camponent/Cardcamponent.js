@@ -283,7 +283,7 @@ export default class Cardcamponent extends React.Component {
      fachdatamount =async()=>{
       this.props.progressbar(50)
 
-      const  url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.catogry}&apiKey=${this.props.apikey}&page=${this.state.page}&pageSize=6`;
+      const  url = `https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=${this.props.apikey}&page=1&pageSize=6`;
     this.setState({loading:true})
     const data = await fetch(url);
     const passdata = await data.json();
