@@ -31,13 +31,13 @@ const App = ()=> {
  
    <Routes>
    <Route path="/" element={  <Cardcamponent  apikey = {apikey}  progressbar = {setprogress}    key={"general"}  catogry = "general"/>}></Route>
-     <Route path="firstProject15july/home" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"general"}  catogry = "general"/>}></Route>
-     <Route path="firstProject15july/business" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"business"} catogry = "business"/>}></Route>
-     <Route path="firstProject15july/Entertainment" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Entertainment"} catogry = "Entertainment"/>}></Route>
-     <Route path="firstProject15july/Health" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Health"} catogry = "Health"/>}></Route>
-     <Route path="firstProject15july/Science" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Science"}catogry = "Science"/>}></Route>
-     <Route path="firstProject15july/Sports" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"sports"} catogry = "sports"/>}></Route>
-     <Route path="firstProject15july/Technology" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Technology"} catogry = "Technology"/>}></Route>
+     <Route path="/home" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"general"}  catogry = "general"/>}></Route>
+     <Route path="/business" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"business"} catogry = "business"/>}></Route>
+     <Route path="/Entertainment" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Entertainment"} catogry = "Entertainment"/>}></Route>
+     <Route path="/Health" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Health"} catogry = "Health"/>}></Route>
+     <Route path="/Science" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Science"}catogry = "Science"/>}></Route>
+     <Route path="/Sports" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"sports"} catogry = "sports"/>}></Route>
+     <Route path="/Technology" element={  <Cardcamponent apikey = {apikey} progressbar = {setprogress}     key={"Technology"} catogry = "Technology"/>}></Route>
 
    </Routes>
  </BrowserRouter>

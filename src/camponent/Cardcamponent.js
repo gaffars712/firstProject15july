@@ -283,7 +283,7 @@ export default class Cardcamponent extends React.Component {
      fachdatamount =async()=>{
       this.props.progressbar(50)
 
-      const  url = `https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=${this.props.apikey}&page=1&pageSize=6`;
+      const  url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.catogry}&apiKey=${this.props.apikey}&page=1&pageSize=6`;
     this.setState({loading:true})
     const data = await fetch(url);
     const passdata = await data.json();
@@ -350,11 +350,11 @@ export default class Cardcamponent extends React.Component {
     <div className="container-fluid">
        { this.state.loading && <Spinner/>}
       <div className="row">
-      {this.state.articalse.map((elementt)=>{return(
+      {this.state.articalse.map((item)=>{return(
         
 
-        <div className="col-12 col-lg-4" key= {elementt.url}>        
-        <Cardbody carttitle= {elementt.title} carddis={elementt.description} cardimg = {elementt.urlToImage} newsurl= {elementt.url} author={elementt.author?elementt.author:"Unknown"} publishdate={elementt.publishedAt} sursename ={elementt.source.name}/>
+        <div className="col-12 col-lg-4" key= {item.url}>        
+        <Cardbody carttitle= {item.title} carddis={item.description} cardimg = {item.urlToImage} newsurl= {item.url} author={item.author?item.author:"Unknown"} publishdate={item.publishedAt} sursename ={item.source.name}/>
         </div>
         )
         })}
