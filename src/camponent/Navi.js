@@ -26,13 +26,13 @@ import { Link } from "react-router-dom";
      
       <div className="" id="navbarNav">
         <ul className="navbar-nav">
-                       <li className="nav-item "> <Link className="nav-link" to="/business"> Business </Link> </li>
-                       <li className="nav-item "> <Link className="nav-link" to="/Entertainment"> Entertainment </Link> </li>
-                       <li className="nav-item "> <Link className="nav-link" to="/home"> General </Link> </li>
-                       <li className="nav-item "> <Link className="nav-link" to="/Health"> Health </Link> </li>
-                       <li className="nav-item "> <Link className="nav-link" to="/Science"> Science </Link> </li>
-                       <li className="nav-item "> <Link className="nav-link" to="/Sports"> Sports </Link> </li>
-                       <li className="nav-item "> <Link className="nav-link" to="/Technology"> Technology </Link> </li>
+                       <li className="nav-item "> <Link className="nav-link" to="/firstProject15july/business"> Business </Link> </li>
+                       <li className="nav-item "> <Link className="nav-link" to="/firstProject15july/Entertainment"> Entertainment </Link> </li>
+                       <li className="nav-item "> <Link className="nav-link" to="/firstProject15july/home"> General </Link> </li>
+                       <li className="nav-item "> <Link className="nav-link" to="/firstProject15july/Health"> Health </Link> </li>
+                       <li className="nav-item "> <Link className="nav-link" to="/firstProject15july/Science"> Science </Link> </li>
+                       <li className="nav-item "> <Link className="nav-link" to="/firstProject15july/Sports"> Sports </Link> </li>
+                       <li className="nav-item "> <Link className="nav-link" to="/firstProject15july/Technology"> Technology </Link> </li>
         </ul>
       </div>
       <div >
