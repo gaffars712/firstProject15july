@@ -1,11 +1,11 @@
 import './App.css';
 import Navi from "./camponent/Navi";
-import { BrowserRouter, Routes, Route } from "react-router-dom"; 
+import { BrowserRouter, Routes, Route, } from "react-router-dom"; 
 
 import LoadingBar from 'react-top-loading-bar'
 import Cardcamponent from './camponent/Cardcamponent'
 import React, { useState } from 'react'
- 
+  
 
 const App = ()=> {
  

@@ -295,7 +295,7 @@ export default class Cardcamponent extends React.Component {
      loading:false
      });
     }
-   async componentDidMount(){
+    componentDidMount(){
     this.fachdatamount()
     // this.props.progressbar(50)
 
@@ -311,35 +311,35 @@ export default class Cardcamponent extends React.Component {
     //  loading:false
     //  });
     };
-      prviousbutoon = async ()=>{
-      this.props.progressbar(20)
-        console.log("privies")
-      const  url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page - 1}&pageSize=6`;
-    this.setState({loading:true})
-    const data = await fetch(url);
-    this.props.progressbar(50)
-    const passdata = await data.json();
-    this.setState({loading:false})
-    this.props.progressbar(100)
-    this.setState({articalse: passdata.articles ,
-    page:this.state.page -1,
-    loading:false});
+    //   prviousbutoon = async ()=>{
+    //   this.props.progressbar(20)
+    //     console.log("privies")
+    //   const  url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page - 1}&pageSize=6`;
+    // this.setState({loading:true})
+    // const data = await fetch(url);
+    // this.props.progressbar(50)
+    // const passdata = await data.json();
+    // this.setState({loading:false})
+    // this.props.progressbar(100)
+    // this.setState({articalse: passdata.articles ,
+    // page:this.state.page -1,
+    // loading:false});
 
 
-    };
-    nextbutton = async ()=>{
-      this.props.progressbar(30)
-      const url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page + 1}&pagesize=6`;
-    this.setState({loading:true})
-    this.props.progressbar(50)
-      const data = await fetch(url);
-      const passdata = await data.json();
-    this.setState({loading:false})
-    this.props.progressbar(100)
-      this.setState({ page: this.state.page + 1,
-        articalse: passdata.articles , loading:false
-     });
-    };
+    // };
+    // nextbutton = async ()=>{
+    //   this.props.progressbar(30)
+    //   const url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.catogry}&apiKey=cd424eb4910340fc81bc4578e4a86d86&page=${this.state.page + 1}&pagesize=6`;
+    // this.setState({loading:true})
+    // this.props.progressbar(50)
+    //   const data = await fetch(url);
+    //   const passdata = await data.json();
+    // this.setState({loading:false})
+    // this.props.progressbar(100)
+    //   this.setState({ page: this.state.page + 1,
+    //     articalse: passdata.articles , loading:false
+    //  });
+    // };
   
   render() {
 {  document.title=` News Monkey - ${this.props.catogry.charAt(0).toUpperCase() + this.props.catogry.slice(1)}`}
@@ -360,8 +360,8 @@ export default class Cardcamponent extends React.Component {
         })}
       </div>
       <div className=" d-flex justify-content-between " style={{margin:"1rem 2rem 1rem 2rem"}}>
-                <button type="button" disabled = {this.state.page<=1} style={{width:"auto"}}  onClick={ this.prviousbutoon} className=" btn-dark rounded" >&larr; Previous </button>
-                <button type="button" disabled = {this.state.page >=50}  onClick={this.nextbutton} className="btnl btn-dark rounded"style={{height:"40px", width:"auto"}} >Next &rarr; </button>
+                {/* <button type="button" disabled = {this.state.page<=1} style={{width:"auto"}}  onClick={ this.prviousbutoon} className=" btn-dark rounded" >&larr; Previous </button>
+                <button type="button" disabled = {this.state.page >=50}  onClick={this.nextbutton} className="btnl btn-dark rounded"style={{height:"40px", width:"auto"}} >Next &rarr; </button> */}
 
                 </div>
                 </div>
